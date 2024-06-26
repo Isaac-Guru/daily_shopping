@@ -1,0 +1,12 @@
+{% include 'incHeader.html' %}
+<script src="{{ url_for('static', filename='admin/js/config.js') }}"></script>
+{% include 'admin/admin_menu.html' %}
+<link rel="stylesheet" href="{{ url_for('static', filename='admin/css/common.css') }}">
+<button class="add_new_cat btn btn-success" onclick="addCat()">+Add New Category</button>
+<button class="add_new_cat btn btn-success float-right" onclick="addItemsModal()">+Add Items</button>
+<div class="container mt-2">
+    <div id="displayAll"></div>
+</div>
+<script src="{{ url_for('static', filename='admin/js/catItems.js') }}"></script>
+<script src="{{ url_for('static', filename='admin/js/utils.js') }}"></script>
+{% include 'incFooter.html' %}

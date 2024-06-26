@@ -1,0 +1,23 @@
+<style>
+    /* Custom CSS for button-like checkboxes */
+    .button-checkbox {
+        display: inline-block;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    .button-checkbox input[type="checkbox"] {
+        display: none; /* Hide the actual checkbox input */
+    }
+    .button-checkbox label {
+        padding: 10px 20px;
+        background-color: #007BFF;
+        border: 1px solid #007BFF;
+        border-radius: 5px;
+        color: #fff;
+    }
+    .button-checkbox input[type="checkbox"]:checked + label {
+        background-color: #28a745; /* Change to your desired color for checked state */
+        color: #fff;
+        border-color: #28a745;
+    }
+</style>

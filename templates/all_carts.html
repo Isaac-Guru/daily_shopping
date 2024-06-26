@@ -1,0 +1,47 @@
+{% include 'incHeader.html' %}
+<script src="{{ url_for('static', filename='js/config.js') }}"></script>
+{% include 'menu.html' %}
+{% include 'multi_checkbox.html' %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
+
+<div class="container mt-2">
+    <div class="mt-2 mb-2 text-right"><button class="btn btn-primary mr-2" onclick="createCart()"> <span class="bold">+</span> New Cart</button></div>
+    <div id="accordion">
+        <!-- Accordion Item 1 -->
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        My Carts
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body pt-2" id="myCartsDiv">
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion Item 2 -->
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Assigned Carts
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body pt-2" id="assignedCartsDiv">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'incFooter.html' %}
+<script src="{{ url_for('static', filename='js/common.js') }}"></script>
+<script src="{{ url_for('static', filename='js/my_carts.js') }}"></script>

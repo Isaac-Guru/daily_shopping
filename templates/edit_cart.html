@@ -1,0 +1,19 @@
+{% include 'incHeader.html' %}
+<script src="{{ url_for('static', filename='js/config.js') }}"></script>
+{% include 'menu.html' %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
+{% include 'multi_checkbox.html' %}
+<div class="container mt-4">
+    <div class="row mb-2 pr-1 center_vertical">
+        <label class="col-3">Name:</label>
+        <input type="text" id="cart_name" class="col-9 form-control" placeholder="Name of the cart">
+    </div>
+    <div id="accordion" class="allItems">
+
+    </div>
+    <button type="button" class="btn btn-success floating_btn" onclick="updateCart()">Update</button>
+</div>
+{% include 'incFooter.html' %}
+<script src="{{ url_for('static', filename='js/common.js') }}"></script>
+<script src="{{ url_for('static', filename='js/edit_cart.js') }}"></script>

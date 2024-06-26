@@ -1,0 +1,29 @@
+{% include 'incHeader.html' %}
+<script src="{{ url_for('static', filename='js/config.js') }}"></script>
+{% include 'menu.html' %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
+<div class="col text-center mb-5">
+    <div class="row">
+        <div class="col-9 text-left center_vertical pl-2">
+            <div class="d-flex flex-column cart_details">
+                <div class="cart_date"></div>
+                <div class="tot_items">sascds: 4</div>
+                <div class="purchased_items">dsvf: 8</div>
+            </div>
+        </div>
+        <div class="col-3 mt-1 pr-2 text-right center_vertical">
+            <div class="d-flex flex-column">
+                <button class="btn btn-primary" onclick="editThis()" style="  padding: 0 10px;background-color: #7978ed">Edit</button>
+            </div>
+        </div>
+    </div>
+    <h1 id="cart_head"></h1>
+    <div class="container mt-4" id="cartDispDiv">
+
+    </div>
+</div>
+<a href="#" class="btn btn-success floating_btn purchased_btn">Add Purchased Items</a>
+{% include 'incFooter.html' %}
+{% include 'view_cart_multi_checkbox.html' %}
+<script src="{{ url_for('static', filename='js/common.js') }}"></script>
+<script src="{{ url_for('static', filename='js/viewCart.js') }}"></script>

@@ -1,0 +1,114 @@
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+        background-color: #333;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        z-index: 100;
+    }
+
+    .menu-button {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .menu-button span {
+        background-color: #fff;
+        height: 3px;
+        width: 25px;
+        margin: 3px 0;
+    }
+
+    .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    .nav-links li {
+        margin-right: 20px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .content {
+        padding: 20px;
+    }
+    #user_name {
+        color: #43e068;
+        font-weight: bold;
+        font-size: 40px;
+        padding: 15px 0;
+    }
+
+    @media (max-width: 768px) {
+        .menu-button {
+            display: flex;
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            background-color: #333;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            /* new */
+            padding-top: 0px;
+        }
+
+        .nav-links.active {
+            display: flex;
+            /* new */
+            margin-top: -15px;
+        }
+
+        .nav-links li {
+            margin: 10px 0;
+        }
+    }
+
+</style>
+<div class="navbar">
+    <div class="menu-button">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="logo_head">Daily Cart</div>
+    <ul class="nav-links">
+        <div>
+            <span id="user_name"></span>
+        </div>
+        <li><a onclick="pageRedirect('my-carts')">My Carts</a></li>
+        <li><a href="#" onclick="pageRedirect('add-new-cart')">Add Cart</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a onclick="deleteAllCookies()">Logout</a></li>
+    </ul>
+</div>
+<script>
+    $(document).ready(function () {
+        userToken = getCookie('token')
+        decoded_token = tokenDecode(userToken)
+        $("#user_name").html(decoded_token['user_name'])
+        $("#user_phone").html(decoded_token['user_phone'])
+        $('.menu-button').click(function () {
+            $('.nav-links').toggleClass('active');
+        });
+    });
+</script>
